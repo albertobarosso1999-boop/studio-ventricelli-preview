@@ -576,3 +576,6 @@ a.marquee{display:block}
 
 /* pagina domande */
 .faq-page{max-width:920px}
+
+/* home: cinque collegamenti */
+@media (min-width:1021px){.go{grid-template-columns:repeat(5,minmax(0,1fr))}.go a{padding:22px}.go b{font-size:21px}}
