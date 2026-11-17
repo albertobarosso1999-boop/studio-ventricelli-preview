@@ -107,7 +107,7 @@ section{position:relative}
 .hero::before{content:"";position:absolute;inset:0;background:url(img/studio-sala.jpg) center/cover;opacity:.13;mix-blend-mode:luminosity}
 .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(70% 80% at 85% 20%,rgba(54,147,45,.3),transparent 65%),linear-gradient(0deg,var(--green-night) 0%,transparent 40%)}
 .hero>*{position:relative;z-index:1}
-.hero-main{flex:1;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:clamp(32px,5vw,84px);align-items:center;padding-top:116px;padding-bottom:44px}
+.hero-main{flex:1 0 auto;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:clamp(32px,5vw,84px);align-items:center;padding-top:116px;padding-bottom:44px}
 .hero .kicker{font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--leaf-bright);display:flex;align-items:center;gap:12px;margin-bottom:22px}
 .hero .kicker::before{content:"";width:32px;height:1px;background:currentColor;flex:none}
 .hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(44px,5.7vw,86px);line-height:1.02;letter-spacing:-.02em}
@@ -419,8 +419,10 @@ fieldset.field{border:0;margin:0;padding:0}
   .doc .tag{display:none}
   .doc .bio{position:static;opacity:1;transform:none;pointer-events:auto}
   .act-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .hero-main{grid-template-columns:1fr;padding-top:112px}
-  .hero-photo{max-height:none;aspect-ratio:4/3.6;justify-self:stretch}
+  .hero{display:block;min-height:0}
+  .hero-main{display:block;padding-top:112px}
+  .hero-photo{max-height:none;aspect-ratio:auto;height:auto;margin-top:36px}
+  .hero-photo img{height:auto;aspect-ratio:4/3.6}
   .rev-quotes{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-inline:calc(var(--gut)*-1);padding:4px var(--gut) 12px;scroll-padding-inline:var(--gut)}
   .rev-quotes::-webkit-scrollbar{display:none}
   .rev-quotes figure{flex:0 0 min(320px,80vw);scroll-snap-align:start}
