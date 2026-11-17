@@ -573,3 +573,6 @@ a.marquee{display:block}
   .tx-panel{display:block;min-height:0}
   .tx-panel figure{min-height:0;height:clamp(200px,56vw,380px)}
 }
+
+/* pagina domande */
+.faq-page{max-width:920px}
