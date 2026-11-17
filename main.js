@@ -107,6 +107,32 @@ if (grid && sheet) {
   });
 }
 
+/* ── trattamenti: linguette ── */
+const tx = $('#tx');
+if (tx) {
+  const tabs = $$('.tx-tab', tx), panels = $$('.tx-panel', tx);
+  let cur = 0;
+  const show = (i, focus) => {
+    cur = (i + tabs.length) % tabs.length;
+    tabs.forEach((t, k) => { t.setAttribute('aria-selected', k === cur); t.tabIndex = k === cur ? 0 : -1; });
+    panels.forEach((p, k) => { p.hidden = k !== cur; });
+    const t = tabs[cur], box = t.parentElement;
+    box.scrollTo({ left: t.offsetLeft - box.offsetLeft - 20, behavior: reduce ? 'auto' : 'smooth' });
+    if (focus) t.focus({ preventScroll: true });
+  };
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => show(i));
+    t.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight') { e.preventDefault(); show(cur + 1, true); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); show(cur - 1, true); }
+    });
+  });
+  $('#txPrev').addEventListener('click', () => show(cur - 1));
+  $('#txNext').addEventListener('click', () => show(cur + 1));
+  const fromHash = () => { const k = panels.findIndex(p => '#' + p.id === location.hash); if (k >= 0) show(k); };
+  addEventListener('hashchange', fromHash); fromHash();
+}
+
 /* ── orari: giorno corrente e stato ── */
 const hours = $('#hours');
 if (hours) {
