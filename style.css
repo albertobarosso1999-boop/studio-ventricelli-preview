@@ -11,7 +11,7 @@
   --muted:#586259;
   --line:rgba(21,33,26,.13);
   --line-light:rgba(255,255,255,.18);
-  --serif:"Bodoni Moda",Georgia,"Times New Roman",serif;
+  --serif:"DM Serif Display",Georgia,"Times New Roman",serif;
   --sans:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
   --wrap:1240px;
   --gut:clamp(20px,4vw,48px);
@@ -448,7 +448,7 @@ fieldset.field{border:0;margin:0;padding:0}
 }
 
 /* ═════════ v4: sito a più pagine ═════════ */
-/* due soli caratteri: Bodoni Moda per i titoli, Manrope per i testi. Niente corsivi. */
+/* due soli caratteri: DM Serif Display per i titoli, Manrope per i testi. Niente corsivi. */
 em,.h2 em,.hero h1 em,.contact h2 em,.contact h1 em,.quote .w.key,.marquee span,.statement .mark{font-style:normal}
 .hero h1,.quote,.contact h2,.contact h1{font-variation-settings:"opsz" 26}
 .doc .bio .n,.why-list .num,.why-vis .count,.card .n,.sheet .cnt,.tool .n{font-family:var(--sans);font-size:12.5px;font-weight:700;letter-spacing:.14em}
@@ -579,3 +579,120 @@ a.marquee{display:block}
 
 /* home: cinque collegamenti */
 @media (min-width:1021px){.go{grid-template-columns:repeat(5,minmax(0,1fr))}.go a{padding:22px}.go b{font-size:21px}}
+
+/* ═════════ v9: tema chiaro ═════════ */
+/* Sfondi chiari ovunque: il verde resta solo sui pulsanti d'azione e su piccoli dettagli.
+   Titoli in DM Serif Display (più leggibile), testi in Manrope. */
+body{font-variation-settings:normal}
+.hero h1,.quote,.contact h2,.contact h1{font-variation-settings:normal}
+.h2,.hero h1,.page-hero h1,.contact h1,.contact h2,.quote,.book-band h2{letter-spacing:-.005em}
+.h2 em,.on-dark .h2 em,.hero h1 em,.contact h1 em,.contact h2 em,.quote .w.key{color:inherit}
+.quote .w{opacity:.22}
+
+/* pulsanti: quello principale è sempre verde pieno */
+.btn-light{background:var(--green);color:#fff}
+.btn-light:hover{background:var(--green-deep)}
+.btn-ghost{border:1px solid rgba(21,33,26,.28);color:var(--ink)}
+.btn-ghost:hover{background:transparent;border-color:var(--green);color:var(--green)}
+
+/* header */
+.header{color:var(--ink)}
+.logo img{filter:none}
+.nav .call{border-color:rgba(21,33,26,.28);color:var(--ink)}
+.nav .call:hover{background:transparent;border-color:var(--green);color:var(--green)}
+.nav .book{background:var(--green);color:#fff}
+.nav .book:hover{background:var(--green-deep)}
+.nav a.link[aria-current]{color:var(--green)}
+
+/* hero della home */
+.hero{background:var(--paper);color:var(--ink)}
+.hero::before,.hero::after{display:none}
+.hero .kicker{color:var(--green)}
+.hero .sub{opacity:1;color:var(--muted)}
+.hero-photo{box-shadow:0 34px 70px -40px rgba(21,33,26,.5);background:var(--mint)}
+.hero-photo figcaption{color:#fff}
+.hero-photo figcaption span{color:#fff;opacity:.85}
+.trust{border-top:1px solid var(--line)}
+.trust .wrap>div{border-left-color:var(--line)}
+.trust span{color:var(--muted)}
+.marquee{background:#fff}
+.marquee span{color:var(--ink)}
+.marquee span::after{background:var(--line);opacity:1}
+
+/* intestazione delle pagine interne */
+.page-hero{background:var(--paper);color:var(--ink);padding-bottom:clamp(36px,5vw,64px)}
+.page-hero::before,.page-hero::after{display:none}
+.page-hero .eyebrow{color:var(--green)}
+.page-hero .lead{color:var(--muted)}
+
+/* sezioni che erano scure */
+.on-dark,.act{background:var(--paper);color:var(--ink)}
+.on-dark .eyebrow{color:var(--green)}
+.on-dark .head .lead{color:var(--muted)}
+.on-dark .rbtn{border-color:var(--line)}
+.on-dark .rbtn:hover{background:var(--green);border-color:var(--green);color:#fff}
+.card{color:#fff;background:var(--mint)}
+.card::before{background:linear-gradient(0deg,rgba(12,18,14,.86) 0%,rgba(12,18,14,.08) 52%,rgba(12,18,14,.08) 74%,rgba(12,18,14,.42) 100%)}
+.card .more{color:#fff;opacity:0}
+.card:hover .more,.card:focus-visible .more{opacity:.85}
+.card:hover .plus,.card:focus-visible .plus{color:var(--ink)}
+dialog.sheet::backdrop{background:rgba(12,18,14,.6)}
+.sheet .pic,.why-vis{background:var(--mint)}
+.sheet .cnt,.tool .n,.why-list .num{color:var(--muted)}
+.why{background:#fff}
+.why-vis .count{background:rgba(12,18,14,.55)}
+.statement .mark{color:var(--line)}
+.stars{color:#c99a2e}
+
+/* dottori */
+.doc{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.doc .tag{color:#fff;background:linear-gradient(0deg,rgba(12,18,14,.82),rgba(12,18,14,0))}
+.doc:hover .tag i{color:var(--ink)}
+.doc .bio .n{color:var(--green)}
+.doc .bio p{color:var(--muted)}
+
+/* sede e contatti */
+.contact{background:#fff;color:var(--ink)}
+.contact::before,.contact::after{display:none}
+.contact .sm{color:var(--muted)}
+.c-rows,.c-rows a,.c-rows div.row{border-color:var(--line)}
+.c-rows .k,.reach .k{color:var(--green)}
+.c-rows a:hover{color:var(--green)}
+.form{border:1px solid var(--line);box-shadow:0 34px 70px -50px rgba(21,33,26,.45)}
+.panel-card{background:var(--paper);border-color:var(--line);backdrop-filter:none;-webkit-backdrop-filter:none}
+.reach li,.hours li{border-top-color:var(--line)}
+.reach .ic{background:#fff;color:var(--green);border:1px solid var(--line)}
+.reach p{color:var(--muted)}
+.badges span{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.status{background:#fff;border:1px solid var(--line);color:var(--muted)}
+.status.open{background:#fff;color:var(--green)}
+.status.open::before{background:var(--leaf);box-shadow:0 0 0 0 rgba(54,147,45,.6)}
+@keyframes pulse{to{box-shadow:0 0 0 9px rgba(54,147,45,0)}}
+.hours li span:last-child{color:var(--muted)}
+.hours li.today{background:#fff;box-shadow:inset 0 0 0 1px var(--line)}
+.hours li.today span:last-child{color:var(--ink);font-weight:600}
+.map{background:var(--mint);border-top-color:var(--line)}
+.map img{opacity:1}
+.map .ov{background:linear-gradient(0deg,rgba(247,245,239,.97) 0%,rgba(247,245,239,.9) 38%,rgba(247,245,239,0) 78%)}
+.map .ov .btn-ghost{background:#fff}
+
+/* fascia prenotazione e footer */
+.book-band{background:var(--mint);color:var(--ink)}
+.book-band::after{display:none}
+.book-band p{color:var(--muted)}
+.footer{background:#fff;color:var(--muted);border-top:1px solid var(--line)}
+.footer img{filter:none;opacity:1}
+.footer a{color:var(--ink);border-bottom-color:var(--line)}
+.footer a:hover{border-color:var(--ink)}
+
+/* menu a tutto schermo */
+@media (max-width:1240px){
+  .nav{background:var(--paper);color:var(--ink)}
+  .nav a.link{color:var(--ink)!important}
+  .nav a.link[aria-current]{color:var(--green)!important}
+  .nav .book{background:var(--green)!important;color:#fff!important}
+  .nav .call{color:var(--ink)!important;border-color:rgba(21,33,26,.28)!important}
+  .menu-open .header,.menu-open .header.solid{color:var(--ink)}
+  .menu-open .logo img{filter:none!important}
+}
+@media (max-width:1020px){.card .more{opacity:.85}}
