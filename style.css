@@ -696,3 +696,32 @@ dialog.sheet::backdrop{background:rgba(12,18,14,.6)}
   .menu-open .logo img{filter:none!important}
 }
 @media (max-width:1020px){.card .more{opacity:.85}}
+
+/* ═════════ v10: verde chiaro ═════════ */
+/* Le sezioni che erano verde scuro tornano verdi, ma in tinta chiara. */
+:root{--sage:#e2eedc;--sage-2:#cfe3c6;--sage-line:rgba(0,96,22,.18)}
+.h2 em,.on-dark .h2 em,.hero h1 em,.contact h1 em,.contact h2 em,.quote .w.key{color:var(--green)}
+.hero{background:radial-gradient(80% 90% at 88% 10%,var(--sage-2),transparent 62%),var(--sage)}
+.page-hero{background:radial-gradient(70% 120% at 92% 0%,var(--sage-2),transparent 60%),var(--sage)}
+.trust{border-top-color:var(--sage-line)}
+.trust .wrap>div{border-left-color:var(--leaf)}
+.marquee span::after{background:var(--leaf)}
+.statement .mark{color:var(--leaf)}
+.contact{background:radial-gradient(80% 60% at 90% 0%,var(--sage-2),transparent 60%),var(--sage)}
+.c-rows,.c-rows a,.c-rows div.row{border-color:var(--sage-line)}
+.form{background:#fff;border-color:transparent}
+.field input,.field select,.field textarea,.chips span{background:var(--paper)}
+.chips input:checked+span{background:var(--green)}
+.panel-card{background:rgba(255,255,255,.72);border-color:transparent}
+.reach .ic,.badges span,.status,.hours li.today{background:var(--sage)}
+.reach .ic,.badges span,.status{border-color:transparent}
+.hours li.today{box-shadow:none}
+.book-band{background:var(--sage-2)}
+.book-band p{color:#3c4a3f}
+.book-band .btn-ghost,.hero .btn-ghost{background:rgba(255,255,255,.55);border-color:transparent}
+.book-band .btn-ghost:hover,.hero .btn-ghost:hover{background:#fff;color:var(--green)}
+.footer{background:var(--sage);border-top-color:var(--sage-line)}
+.footer a{border-bottom-color:var(--sage-line)}
+.header.solid{background:rgba(247,245,239,.92)}
+@media (max-width:1240px){.nav{background:var(--sage)}}
+.page-hero + .act{padding-top:clamp(36px,5vw,64px)}
