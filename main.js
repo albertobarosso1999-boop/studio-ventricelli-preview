@@ -63,6 +63,22 @@ docs.forEach(d => {
   d.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); act(); } });
 });
 
+/* su telefono il profilo dei dottori si apre a richiesta */
+docs.forEach(d => {
+  const bio = $('.bio', d);
+  if (!bio || $$('p', bio).length < 2) return;
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'bio-more'; b.setAttribute('aria-expanded', 'false');
+  b.textContent = 'Leggi il profilo completo';
+  b.addEventListener('click', e => {
+    e.stopPropagation();
+    const open = d.classList.toggle('open');
+    b.setAttribute('aria-expanded', open);
+    b.textContent = open ? 'Mostra meno' : 'Leggi il profilo completo';
+  });
+  bio.appendChild(b);
+});
+
 /* ── perché scegliere noi ── */
 const whyList = $('#whyList');
 if (whyList) {
